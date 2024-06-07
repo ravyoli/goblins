@@ -2,7 +2,7 @@ const Actions = [
     {
         type: 'sound',
         clip: 'close_eyes.m4a',
-        text: '.לילה טוב כולם, עצמו עיניים'
+        text: 'לילה טוב כולם, עצמו עיניים.'
     },
     {
         type: 'wait',
@@ -26,7 +26,7 @@ const Actions = [
         card: 'alien',
         type: 'sound',
         clip: 'alien_close_eyes.m4a',
-        text: 'חייזר עצום עיניים.'
+        text: 'חייזר עצום את עינייך.'
     },
 
 
@@ -34,7 +34,7 @@ const Actions = [
         card: 'tech',
         type: 'sound',
         clip: 'tech_wake_up.m4a',
-        text: 'טכנאי התעורר,'
+        text: 'טכנאי התעורר, ברשותך לשים על קלף של שחקן אחר את דיסקית המגן.'
     },    
     {
         card: 'tech',
@@ -46,7 +46,7 @@ const Actions = [
         card: 'tech',
         type: 'sound',
         clip: 'tech_close_eyes.m4a',
-        text: 'טכנאי עצום עיניים.'
+        text: 'טכנאי עצום את עינייך.'
     },
 
 
