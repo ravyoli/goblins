@@ -71,6 +71,25 @@ const Actions = [
     },
 
     {
+        card: 'teacher_student',
+        type: 'sound',
+        clip: 'teacher_and_student_wake_up.m4a',
+        text: 'מורה ותלמיד התעוררו. אם יש במשחק גם מורה וגם תלמיד, אז מורה תראה לתלמיד קלף ממרכז השולחן, מבלי שתראה אותו. אם יש או מורה או תלמיד לבד, אתם לא עושים כלום.'
+    },
+    {
+        card: 'teacher_student',
+        type: 'wait',
+        seconds: 5,
+        text: 'השהייה'
+    },
+    {
+        card: 'teacher_student',
+        type: 'sound',
+        clip: 'teacher_and_student_close_eyes.m4a',
+        text: 'מורה ותלמיד עצמו את עיניכם'
+    },
+
+    {
         type: 'sound',
         clip: 'all_wake_up.m4a',
         text: 'בוקר טוב כולם.'
