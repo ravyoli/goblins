@@ -99,14 +99,17 @@ const GamePage = () => {
     };
   }, [isStarted, selectedCards]);
 
-  let currentCard = null;
+  let currentCards = null;
   if (currentAction?.card != null) {
-    let card = selectedCards.filter(card => card.type === currentAction?.card)[0];
-    currentCard = <Card
-      image={card.image}
-      name={card.name}
-      isSelected={true}
-    />;
+    currentCards = <div className='playing-cards'>
+      {selectedCards.filter(card => card.type === currentAction?.card).map((c,idx) => 
+        <Card
+        key={idx}
+        image={c.image}
+        name={c.name}
+        isSelected={true} />
+      )}
+      </div>;
   }
 
   return (
@@ -115,7 +118,7 @@ const GamePage = () => {
       <ul>
         {selectedCards.map((card, index) => <li key={index}>{card.name}</li>)}
       </ul> */}
-      {currentCard}
+      {currentCards}
       <p>{currentAction?.text}</p>
       <button onClick={handleWait}>
         <p>

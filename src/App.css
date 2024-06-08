@@ -32,6 +32,11 @@ button {
   gap: 24px;
 }
 
+.playing-cards {
+  display: flex;
+  flex-direction: row;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin 3s infinite linear;

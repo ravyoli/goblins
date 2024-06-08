@@ -90,6 +90,25 @@ const Actions = [
     },
 
     {
+        card: 'judge',
+        type: 'sound',
+        clip: 'judge_wake_up.m4a',
+        text: 'שופט התעורר, ברשותך לצפות בקלף אחד מתוך אילו הנמצאים במרכז השולחן.'
+    },
+    {
+        card: 'judge',
+        type: 'wait',
+        seconds: 5,
+        text: 'השהייה'
+    },
+    {
+        card: 'judge',
+        type: 'sound',
+        clip: 'judge_close_eyes.m4a',
+        text: 'שופט עוצם את עיניך.'
+    },
+
+    {
         type: 'sound',
         clip: 'all_wake_up.m4a',
         text: 'בוקר טוב כולם.'
