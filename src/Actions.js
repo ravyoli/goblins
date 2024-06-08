@@ -130,6 +130,27 @@ const Actions = [
 
 
     {
+        card: 'troublemaker',
+        type: 'sound',
+        clip: 'troublemaker_wake_up.m4a',
+        text: 'תככן התעורר, ברשותך להחליף בין קלף של שחקן אחר לבין קלף ממרכז השולחן מבלי להסתכל בהם.'
+    },
+    {
+        card: 'troublemaker',
+        type: 'wait',
+        seconds: 5,
+        text: 'השהייה'
+    },
+    {
+        card: 'troublemaker',
+        type: 'sound',
+        clip: 'troublemaker_close_eyes.m4a',
+        text: 'תככן עצום את עיניך.'
+    },
+
+
+
+    {
         type: 'sound',
         clip: 'all_wake_up.m4a',
         text: 'בוקר טוב כולם.'

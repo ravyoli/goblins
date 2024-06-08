@@ -7,5 +7,5 @@ export const Cards = [
     { image: '/teacher.png', name: 'מורה', type: 'teacher_student'},
     { image: '/judge.png', name: 'שופט' , type: 'judge'},
     { image: '/pilot.png', name: 'טייס', type: 'pilot' },
-    { image: '/image8.png', name: 'Card 8' },
+    { image: '/troublemaker.png', name: 'תככן', type: 'troublemaker' },
 ];

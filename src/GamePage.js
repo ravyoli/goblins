@@ -84,7 +84,7 @@ const GamePage = () => {
     const { signal } = abortController;
 
     if (isStarted) {
-      playSound('background1.m4a', signal, 0.1, true).catch(err => {});
+      playSound('background1.m4a', signal, 0.2, true).catch(err => {});
       const actions = Actions.filter(action => !action.card || selectedCards.some(card => card.type == action.card));
       executeActions(actions, signal, abortController).catch(err => {
         if (err.message === 'Aborted') {
