@@ -105,8 +105,29 @@ const Actions = [
         card: 'judge',
         type: 'sound',
         clip: 'judge_close_eyes.m4a',
-        text: 'שופט עוצם את עיניך.'
+        text: 'שופט עצום את עיניך.'
     },
+
+    {
+        card: 'pilot',
+        type: 'sound',
+        clip: 'pilot_wake_up.m4a',
+        text: 'טייס התעורר, תוכל להחליף את הקלף שלך בקלף של שחקן אחר, להתבונן בקלף, ולאחר מכן להחליפו עם קלף ממרכז השולחן מבלי להסתכל בו.'
+    },
+    {
+        card: 'pilot',
+        type: 'wait',
+        seconds: 5,
+        text: 'השהייה'
+    },
+    {
+        card: 'pilot',
+        type: 'sound',
+        clip: 'pilot_close_eyes.m4a',
+        text: 'טייס עצום את עיניך.'
+    },
+
+
 
     {
         type: 'sound',
