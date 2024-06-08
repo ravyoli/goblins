@@ -39,7 +39,7 @@ const GamePage = () => {
   const playSound = (file, signal, volume=1, loop=false) => {
     return new Promise((resolve, reject) => {
       if (signal?.aborted) return reject(new Error('Aborted'));
-      const audio = new Audio(process.env.PUBLIC_URL + file);
+      const audio = new Audio(file);
       audio.volume = volume;
       audio.loop = loop;
       audio.play();
