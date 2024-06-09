@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Card from './Card';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Cards } from './Cards';
 
 const MainPage = () => {
@@ -13,6 +13,9 @@ const MainPage = () => {
         navigate('/game', { state: { selectedCards: selected } });
       };
     
+      const handleSettings = () => {
+        navigate('/settings');
+    };
 
     const handleCardClick = (index) => {
         const updatedSelection = selectedCards.map((isSelected, i) => 
@@ -41,6 +44,9 @@ const MainPage = () => {
                 <p>
                  התחל עם {selectedCards.filter(x => x).length} דמויות
                 </p>
+            </button>
+            <button className='SettingsButton' onClick={handleSettings}>
+                <p>הגדרות</p>
             </button>
         </>
     );

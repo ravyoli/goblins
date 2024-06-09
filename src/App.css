@@ -5,9 +5,15 @@ button {
   color: white;
   min-width: 60px;
   margin: 2px;
+  border-radius: 5px; /* Add some border-radius for rounded corners */
+  padding: 10px; /* Add padding for better appearance */
 }
 
 .EnterButton {
+  margin: 30px;
+}
+ֿ
+.SettingsButton {
   margin: 30px;
 }
 
@@ -84,4 +90,23 @@ button {
 .buttons-container {
   display:flex;
   flex-direction: row;
+}
+
+.input-container {
+  margin: 20px 0;
+}
+
+.input-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.input-box {
+  width: 100px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: burlywood;
 }

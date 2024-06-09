@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import Actions from './Actions';
 import Card from './Card';
+import { AppContext } from './AppContext';
 
 const GamePage = () => {
+  const { delaySeconds } = useContext(AppContext); 
+
   const location = useLocation();
   const { selectedCards } = location.state || { selectedCards: [] };
   const [currentAction, setCurrentAction] = useState();
@@ -28,8 +31,10 @@ const GamePage = () => {
       setCurrentAction(action);
       if (action.type === 'sound') {
         await playSound(action.clip, signal);
-      } else if (action.type === 'wait') {
+      } else if (action.type === 'const_wait') {
         await delay(action.seconds, signal);
+      } else if (action.type === 'wait') {
+        await delay(delaySeconds, signal);
       }
     }
     setCurrentAction(null);
@@ -114,10 +119,6 @@ const GamePage = () => {
 
   return (
     <div className="App">
-      {/* <p>קלפים במשחק</p>
-      <ul>
-        {selectedCards.map((card, index) => <li key={index}>{card.name}</li>)}
-      </ul> */}
       {currentCards}
       <p>{currentAction?.text}</p>
       <div className='buttons-container'>

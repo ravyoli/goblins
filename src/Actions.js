@@ -5,7 +5,7 @@ const Actions = [
         text: 'לילה טוב כולם, עצמו עיניים.'
     },
     {
-        type: 'wait',
+        type: 'const_wait',
         seconds: 2,
         text: 'השהייה'
     },
@@ -19,7 +19,6 @@ const Actions = [
     {
         card: 'alien',
         type: 'wait',
-        seconds: 5,
         text: 'השהייה'
     },
     {
@@ -39,7 +38,6 @@ const Actions = [
     {
         card: 'tech',
         type: 'wait',
-        seconds: 5,
         text: 'השהייה'
     },
     {
@@ -60,7 +58,6 @@ const Actions = [
     {
         card: 'goblin',
         type: 'wait',
-        seconds: 5,
         text: 'השהייה'
     },
     {
@@ -79,7 +76,6 @@ const Actions = [
     {
         card: 'teacher_student',
         type: 'wait',
-        seconds: 5,
         text: 'השהייה'
     },
     {
@@ -117,7 +113,6 @@ const Actions = [
     {
         card: 'pilot',
         type: 'wait',
-        seconds: 5,
         text: 'השהייה'
     },
     {
@@ -138,7 +133,6 @@ const Actions = [
     {
         card: 'troublemaker',
         type: 'wait',
-        seconds: 5,
         text: 'השהייה'
     },
     {
