@@ -15,7 +15,7 @@ const GamePage = () => {
     if (currentAction != null) {
       // continue from currentAction
       for (let i = 0; i < actions.length; ++i) {
-        if(actions[i] === currentAction) {
+        if (actions[i] === currentAction) {
           actions.splice(0, i);
           break;
         }
@@ -36,7 +36,7 @@ const GamePage = () => {
     abortController.abort('finished');
   };
 
-  const playSound = (file, signal, volume=1, loop=false) => {
+  const playSound = (file, signal, volume = 1, loop = false) => {
     return new Promise((resolve, reject) => {
       if (signal?.aborted) return reject(new Error('Aborted'));
       const audio = new Audio(file);
@@ -84,7 +84,7 @@ const GamePage = () => {
     const { signal } = abortController;
 
     if (isStarted) {
-      playSound('background1.m4a', signal, 0.2, true).catch(err => {});
+      playSound('background1.m4a', signal, 0.2, true).catch(err => { });
       const actions = Actions.filter(action => !action.card || selectedCards.some(card => card.type == action.card));
       executeActions(actions, signal, abortController).catch(err => {
         if (err.message === 'Aborted') {
@@ -102,14 +102,14 @@ const GamePage = () => {
   let currentCards = null;
   if (currentAction?.card != null) {
     currentCards = <div className='playing-cards'>
-      {selectedCards.filter(card => card.type === currentAction?.card).map((c,idx) => 
+      {selectedCards.filter(card => card.type === currentAction?.card).map((c, idx) =>
         <Card
-        key={idx}
-        image={c.image}
-        name={c.name}
-        isSelected={true} />
+          key={idx}
+          image={c.image}
+          name={c.name}
+          isSelected={true} />
       )}
-      </div>;
+    </div>;
   }
 
   return (
@@ -120,16 +120,19 @@ const GamePage = () => {
       </ul> */}
       {currentCards}
       <p>{currentAction?.text}</p>
-      <button onClick={handleWait}>
-        <p>
-          {!isStarted ? 'בוא נמשיך' : 'חכה רגע'}
-        </p>
-      </button>
-      <button onClick={handleGoHome}>
-        <p>
-          מסך ראשי
-        </p>
-      </button>
+      <div className='buttons-container'>
+        <button onClick={handleWait}>
+          <p>
+            {!isStarted ? 'בוא נמשיך' : 'חכה רגע'}
+          </p>
+        </button>
+        <button onClick={handleGoHome}>
+          <p>
+            מסך ראשי
+          </p>
+        </button>
+
+      </div>
     </div>
   );
 };

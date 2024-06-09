@@ -1,6 +1,16 @@
 button {
   cursor: pointer;
+
+  background-color: #272467;
+  color: white;
+  min-width: 60px;
+  margin: 2px;
 }
+
+.EnterButton {
+  margin: 30px;
+}
+
 .App {
   text-align: center;
   background-color: #282c34;
@@ -59,12 +69,6 @@ button {
   color: #61dafb;
 }
 
-.EnterButton {
-  background-color: blue;
-  color: white;
-  width: 100px;
-  margin: 30px;
-}
 @keyframes App-logo-spin {
   0% {
     transform: rotate(-15deg);
@@ -75,4 +79,9 @@ button {
   100% {
     transform: rotate(-15deg);
   }
+}
+
+.buttons-container {
+  display:flex;
+  flex-direction: row;
 }
