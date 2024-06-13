@@ -143,6 +143,25 @@ const Actions = [
     },
 
 
+    {
+        card: 'footballer',
+        type: 'sound',
+        clip: 'footballer_wake_up.m4a',
+        text: 'כדורגלן התעורר, ברשותך להזיז את כל הקלפים, כולל שלך, עם כיוון השעון.'
+    },
+    {
+        card: 'footballer',
+        type: 'wait',
+        text: 'השהייה'
+    },
+    {
+        card: 'footballer',
+        type: 'sound',
+        clip: 'footballer_close_eyes.m4a',
+        text: 'כדורגלן עצום את עיניך.'
+    },
+
+
 
     {
         type: 'sound',
