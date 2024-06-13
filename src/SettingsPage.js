@@ -3,23 +3,21 @@ import { useNavigate } from 'react-router-dom';
 import { AppContext } from './AppContext';
 
 const SettingsPage = () => {
-  const { delaySeconds, setDelaySeconds } = useContext(AppContext);
-  const { audioSpeed, setAudioSpeed } = useContext(AppContext);
-  const [delayValue, setDelayValue] = useState(delaySeconds);
-  const [audioSpeedValue, setAudioSpeedValue] = useState(audioSpeed);
+  const { delaySeconds, setDelaySeconds, audioSpeed, setAudioSpeed } = useContext(AppContext);
+  const [settings, setSettings] = useState({ delay: delaySeconds, speed: audioSpeed });
   const navigate = useNavigate();
 
-  const handleDelayChange = (e) => {
-    setDelayValue(e.target.value);
-  };
-
-  const handleAudioSpeedChange = (e) => {
-    setAudioSpeedValue(e.target.value);
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setSettings((prevSettings) => ({
+      ...prevSettings,
+      [name]: value
+    }));
   };
 
   const handleSave = () => {
-    setDelaySeconds(parseInt(delayValue, 10));
-    setAudioSpeed(parseInt(audioSpeedValue, 10));
+    setDelaySeconds(parseInt(settings.delay, 10));
+    setAudioSpeed(parseInt(settings.speed, 10));
     navigate('/main');
   };
 
@@ -29,16 +27,18 @@ const SettingsPage = () => {
       <div className="input-container">
         <label className="input-label">זמן השהייה:</label>
         <input
+          name="delay"
           type="number"
-          value={delayValue}
-          onChange={handleDelayChange}
+          value={settings.delay}
+          onChange={handleChange}
           className="input-box"
         />
         <label className="input-label">מהירות הקראה:</label>
         <input
+          name="speed"
           type="number"
-          value={audioSpeedValue}
-          onChange={handleAudioSpeedChange}
+          value={settings.speed}
+          onChange={handleChange}
           className="input-box"
         />
       </div>
