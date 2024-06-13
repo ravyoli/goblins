@@ -6,15 +6,7 @@ button {
   min-width: 60px;
   margin: 2px;
   border-radius: 5px; /* Add some border-radius for rounded corners */
-  padding: 10px; /* Add padding for better appearance */
-}
-
-.EnterButton {
-  margin: 30px;
-}
-ֿ
-.SettingsButton {
-  margin: 30px;
+  padding: 6px; /* Add padding for better appearance */
 }
 
 .App {
@@ -44,8 +36,9 @@ button {
 .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 100px);
-  grid-template-rows: repeat(3, 150px);
+  grid-template-rows: repeat(4, 150px);
   gap: 24px;
+  margin: 10px;
 }
 
 .playing-cards {
@@ -98,7 +91,7 @@ button {
 
 .input-label {
   display: block;
-  margin-bottom: 8px;
+  margin: 8px;
   font-weight: bold;
 }
 

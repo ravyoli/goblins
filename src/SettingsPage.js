@@ -4,15 +4,22 @@ import { AppContext } from './AppContext';
 
 const SettingsPage = () => {
   const { delaySeconds, setDelaySeconds } = useContext(AppContext);
-  const [inputValue, setInputValue] = useState(delaySeconds);
+  const { audioSpeed, setAudioSpeed } = useContext(AppContext);
+  const [delayValue, setDelayValue] = useState(delaySeconds);
+  const [audioSpeedValue, setAudioSpeedValue] = useState(audioSpeed);
   const navigate = useNavigate();
 
-  const handleInputChange = (e) => {
-    setInputValue(e.target.value);
+  const handleDelayChange = (e) => {
+    setDelayValue(e.target.value);
+  };
+
+  const handleAudioSpeedChange = (e) => {
+    setAudioSpeedValue(e.target.value);
   };
 
   const handleSave = () => {
-    setDelaySeconds(parseInt(inputValue, 10));
+    setDelaySeconds(parseInt(delayValue, 10));
+    setAudioSpeed(parseInt(audioSpeedValue, 10));
     navigate('/main');
   };
 
@@ -23,8 +30,15 @@ const SettingsPage = () => {
         <label className="input-label">זמן השהייה:</label>
         <input
           type="number"
-          value={inputValue}
-          onChange={handleInputChange}
+          value={delayValue}
+          onChange={handleDelayChange}
+          className="input-box"
+        />
+        <label className="input-label">מהירות הקראה:</label>
+        <input
+          type="number"
+          value={audioSpeedValue}
+          onChange={handleAudioSpeedChange}
           className="input-box"
         />
       </div>

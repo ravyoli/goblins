@@ -40,6 +40,7 @@ const MainPage = () => {
                     />
                 ))}
             </div>
+            <div className="buttons-container">
             <button className='EnterButton' onClick={handleStartGame}>
                 <p>
                  התחל עם {selectedCards.filter(x => x).length} דמויות
@@ -48,6 +49,8 @@ const MainPage = () => {
             <button className='SettingsButton' onClick={handleSettings}>
                 <p>הגדרות</p>
             </button>
+
+            </div>
         </>
     );
 };

@@ -7,12 +7,13 @@ import Card from './Card';
 import { AppContext } from './AppContext';
 
 const GamePage = () => {
-  const { delaySeconds } = useContext(AppContext); 
+  const { delaySeconds, audioSpeed } = useContext(AppContext);
 
   const location = useLocation();
   const { selectedCards } = location.state || { selectedCards: [] };
   const [currentAction, setCurrentAction] = useState();
   const [isStarted, setStarted] = useState(false);
+  const [currentDelaySeconds, setCurrentDelaySeconds] = useState(5);
 
   const executeActions = async (actions, signal, abortController) => {
     if (currentAction != null) {
@@ -47,6 +48,7 @@ const GamePage = () => {
       const audio = new Audio(file);
       audio.volume = volume;
       audio.loop = loop;
+      audio.playbackRate = audioSpeed / 100.0;
       audio.play();
       audio.onended = resolve;
 
@@ -61,9 +63,22 @@ const GamePage = () => {
   const delay = (seconds, signal) => {
     return new Promise((resolve, reject) => {
       if (signal?.aborted) return reject(new Error('Aborted'));
-      const timeoutId = setTimeout(resolve, seconds * 1000);
+      setCurrentDelaySeconds(seconds);
+      const updateRemainingTimeId = setInterval(() => {
+        setCurrentDelaySeconds(prevSeconds => {
+          if (prevSeconds <= 1) {
+            clearInterval(updateRemainingTimeId);
+          }
+          return prevSeconds - 1;
+        });
+      }, 1000);
+      const timeoutId = setTimeout(() => {
+        clearInterval(updateRemainingTimeId);
+        resolve();
+      }, seconds * 1000);
       signal?.addEventListener('abort', () => {
         clearTimeout(timeoutId);
+        clearInterval(updateRemainingTimeId);
         reject(new Error('Aborted'));
       });
     });
@@ -117,10 +132,15 @@ const GamePage = () => {
     </div>;
   }
 
+  let text = currentAction?.text;
+  if (currentAction?.type === 'wait' || currentAction?.type === 'const_wait') {
+    text = `השהייה ל ${currentDelaySeconds} שניות`;
+  }
+
   return (
     <div className="App">
       {currentCards}
-      <p>{currentAction?.text}</p>
+      <p>{text}</p>
       <div className='buttons-container'>
         <button onClick={handleWait}>
           <p>
