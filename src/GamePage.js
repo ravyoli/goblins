@@ -7,7 +7,7 @@ import Card from './Card';
 import { AppContext } from './AppContext';
 
 const GamePage = () => {
-  const { delaySeconds, audioSpeed } = useContext(AppContext);
+  const { delaySeconds, audioSpeed, backgroundVolume } = useContext(AppContext);
 
   const location = useLocation();
   const { selectedCards } = location.state || { selectedCards: [] };
@@ -106,7 +106,7 @@ const GamePage = () => {
     const { signal } = abortController;
 
     if (isStarted) {
-      playSound('background1.m4a', signal, 0.2, true, false).catch(err => { });
+      playSound('background1.m4a', signal, 0.1 * backgroundVolume, true, false).catch(err => { });
       const actions = Actions.filter(action => !action.card || selectedCards.some(card => card.type == action.card));
       executeActions(actions, signal, abortController).catch(err => {
         if (err.message === 'Aborted') {
