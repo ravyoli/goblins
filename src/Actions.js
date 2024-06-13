@@ -163,6 +163,27 @@ const Actions = [
 
 
 
+
+    {
+        card: 'commander',
+        type: 'sound',
+        clip: 'commander_wake_up.m4a',
+        text: 'מפקד התעורר, עליך להחליף את הקלף עם קלף ממרכז השולחן, מבלי להסתכל בו, ולאחר מכן ברשותך להחליף קלף זה עם קלף אחר ממרכז השולחן ולהסתכל בו.'
+    },
+    {
+        card: 'commander',
+        type: 'wait',
+        text: 'השהייה'
+    },
+    {
+        card: 'commander',
+        type: 'sound',
+        clip: 'commander_close_eyes.m4a',
+        text: 'מפקד עצום את עיניך.'
+    },
+
+
+
     {
         type: 'sound',
         clip: 'all_wake_up.m4a',

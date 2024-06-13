@@ -3,7 +3,7 @@ import React, { createContext, useState } from 'react';
 const AppContext = createContext();
 
 const AppProvider = ({ children }) => {
-    const [delaySeconds, setDelaySeconds] = useState(5);
+    const [delaySeconds, setDelaySeconds] = useState(3);
     const [audioSpeed, setAudioSpeed] = useState(100);
     const [backgroundVolume, setBackgroundVolume] = useState(2);
 
