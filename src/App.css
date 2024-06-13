@@ -9,6 +9,10 @@ button {
   padding: 6px; /* Add padding for better appearance */
 }
 
+.EnterButton {
+  margin: 30px;
+}
+
 .App {
   text-align: center;
   background-color: #282c34;
