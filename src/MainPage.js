@@ -41,12 +41,12 @@ const MainPage = () => {
                 ))}
             </div>
             <div className="buttons-container">
-            <button className='EnterButton' onClick={handleStartGame}>
+            <button onClick={handleStartGame}>
                 <p>
                  התחל עם {selectedCards.filter(x => x).length} דמויות
                 </p>
             </button>
-            <button className='SettingsButton' onClick={handleSettings}>
+            <button onClick={handleSettings}>
                 <p>הגדרות</p>
             </button>
 
