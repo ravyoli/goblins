@@ -10,4 +10,5 @@ export const Cards = [
     { image: 'troublemaker.png', name: 'תככן', type: 'troublemaker' },
     { image: 'footballer.png', name: 'כדורגלן', type: 'footballer' },
     { image: 'commander.png', name: 'מפקד', type: 'commander' },
+    { image: 'farmer.png', name: 'חקלאי', type: 'farmer' },
 ];
