@@ -183,6 +183,25 @@ const Actions = [
     },
 
 
+    {
+        card: 'farmer',
+        type: 'sound',
+        clip: 'farmer_wake_up.m4a',
+        text: 'חקלאי התעורר, ברשותך להציץ בכל הקלפים במרכז השולחן. אתה יכול לגלות רק אחד מהקלפים שראית.'
+    },
+    {
+        card: 'farmer',
+        type: 'wait',
+        text: 'השהייה'
+    },
+    {
+        card: 'farmer',
+        type: 'sound',
+        clip: 'farmer_close_eyes.m4a',
+        text: 'חקלאי עצום את עיניך.'
+    },
+
+
 
     {
         type: 'sound',
