@@ -4,13 +4,18 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import Actions from './Actions';
 import Card from './Card';
+import { Cards } from './Cards';
 import { AppContext } from './AppContext';
 
 const GamePage = () => {
   const { delaySeconds, audioSpeed, backgroundVolume } = useContext(AppContext);
 
   const location = useLocation();
-  const { selectedCards } = location.state || { selectedCards: [] };
+
+  const { selectedCards, initialSelectedCards } = location.state || { 
+    selectedCards: [],
+    initialSelectedCards: Array(Cards.length).fill(false)
+   };
   const [currentAction, setCurrentAction] = useState();
   const [isStarted, setStarted] = useState(false);
   const [currentDelaySeconds, setCurrentDelaySeconds] = useState(5);
@@ -88,7 +93,7 @@ const GamePage = () => {
 
   const navigate = useNavigate();
   const handleGoHome = () => {
-    navigate('/main');
+    navigate('/main', { state: { initialSelectedCards: initialSelectedCards } });
   }
 
   const handleWait = () => {

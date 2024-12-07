@@ -11,7 +11,7 @@ const MainPage = () => {
 
     const handleStartGame = () => {
         const selected = Cards.filter((_, index) => selectedCards[index]);
-        navigate('/game', { state: { selectedCards: selected } });
+        navigate('/game', { state: { selectedCards: selected, initialSelectedCards: selectedCards } });
       };
     
       const handleSettings = () => {
