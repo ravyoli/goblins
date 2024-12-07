@@ -1,8 +1,12 @@
 import React, { useContext, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { AppContext } from './AppContext';
+import { Cards } from './Cards';
 
 const SettingsPage = () => {
+  const location = useLocation();
+  const { initialSelectedCards } = location.state || { initialSelectedCards: Array(Cards.length).fill(false) };
+
   const { delaySeconds, setDelaySeconds, audioSpeed, setAudioSpeed, backgroundVolume, setBackgroundVolume } = useContext(AppContext);
   const [settings, setSettings] = useState({ delay: delaySeconds, speed: audioSpeed, backgroundVolume: backgroundVolume });
   const navigate = useNavigate();
@@ -19,7 +23,7 @@ const SettingsPage = () => {
     setDelaySeconds(parseInt(settings.delay, 10));
     setAudioSpeed(parseInt(settings.speed, 10));
     setBackgroundVolume(parseInt(settings.backgroundVolume, 10));
-    navigate('/main');
+    navigate('/main', { state: { initialSelectedCards: initialSelectedCards } });
   };
 
   return (

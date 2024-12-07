@@ -3,6 +3,7 @@ import Card from './Card';
 import './App.css';
 import { useNavigate } from 'react-router-dom';
 import { Cards } from './Cards';
+import { useLocation } from 'react-router-dom';
 
 const MainPage = () => {
 
@@ -14,7 +15,7 @@ const MainPage = () => {
       };
     
       const handleSettings = () => {
-        navigate('/settings');
+        navigate('/settings', { state: { initialSelectedCards: selectedCards } });
     };
 
     const handleCardClick = (index) => {
@@ -24,7 +25,12 @@ const MainPage = () => {
         setSelectedCards(updatedSelection);
       };
 
-    const [selectedCards, setSelectedCards] = useState(Array(Cards.length).fill(false));
+    const location = useLocation();
+
+
+    const { initialSelectedCards } = location.state || { initialSelectedCards: Array(Cards.length).fill(false) };
+    
+    const [selectedCards, setSelectedCards] = useState(initialSelectedCards);
 
     return (
         <>
