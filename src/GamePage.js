@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 import './App.css';
+import Button from './components/Button';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import Actions from './Actions';
 import Card from './Card';
@@ -149,16 +150,12 @@ const GamePage = () => {
       {currentCards}
       <p>{text}</p>
       <div className='buttons-container'>
-        <button onClick={handleWait}>
-          <p>
-            {!isStarted ? 'בוא נמשיך' : 'חכה רגע'}
-          </p>
-        </button>
-        <button onClick={handleGoHome}>
-          <p>
-            מסך ראשי
-          </p>
-        </button>
+        <Button onClick={handleWait}>
+          {!isStarted ? 'בוא נמשיך' : 'חכה רגע'}
+        </Button>
+        <Button onClick={handleGoHome}>
+          מסך ראשי
+        </Button>
 
       </div>
     </div>

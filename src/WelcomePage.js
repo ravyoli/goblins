@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './App.css';
+import Button from './components/Button';
 
 const WelcomePage = () => {
   const navigate = useNavigate();
@@ -15,9 +16,9 @@ const WelcomePage = () => {
             גבעת הגובלינים
         </p>
         <img src="goblin.jpg" className="App-logo" alt="logo" />
-        <button className='EnterButton' onClick={handleEnterClick}>
-            <p>היכנס</p>
-        </button>
+        <Button onClick={handleEnterClick}>
+            היכנס
+        </Button>
     </header>
   );
 };

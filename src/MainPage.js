@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import Card from './Card';
 import './App.css';
+import Button from './components/Button';
 import { useNavigate } from 'react-router-dom';
 import { Cards } from './Cards';
 import { useLocation } from 'react-router-dom';
@@ -47,14 +48,12 @@ const MainPage = () => {
                 ))}
             </div>
             <div className="buttons-container">
-            <button onClick={handleStartGame}>
-                <p>
-                 התחל עם {selectedCards.filter(x => x).length} דמויות
-                </p>
-            </button>
-            <button onClick={handleSettings}>
-                <p>הגדרות</p>
-            </button>
+            <Button onClick={handleStartGame}>
+                התחל עם {selectedCards.filter(x => x).length} דמויות
+            </Button>
+            <Button onClick={handleSettings}>
+                הגדרות
+            </Button>
 
             </div>
         </>

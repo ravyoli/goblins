@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { AppContext } from './AppContext';
 import { Cards } from './Cards';
+import Button from './components/Button';
 
 const SettingsPage = () => {
   const location = useLocation();
@@ -60,7 +61,7 @@ const SettingsPage = () => {
           min={0}
         />
       </div>
-      <button onClick={handleSave}>שמור</button>
+      <Button onClick={handleSave}>שמור</Button>
     </div>
   );
 };
