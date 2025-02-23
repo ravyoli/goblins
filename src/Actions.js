@@ -201,6 +201,25 @@ const Actions = [
         text: 'חקלאי עצום את עיניך.'
     },
 
+    
+    {
+        card: 'explorer',
+        type: 'sound',
+        clip: 'explorer_wake_up.m4a',
+        text: 'חוקרת, פיקחי את עינייך. ברשותך להציץ בקלף אחד של מי שלידך, איזה צד שאת רוצה.'
+    },
+    {
+        card: 'explorer',
+        type: 'wait',
+        text: 'השהייה'
+    },
+    {
+        card: 'explorer',
+        type: 'sound',
+        clip: 'explorer_close_eyes.m4a',
+        text: 'חוקרת עיצמי את עינייך.'
+    },
+
 
 
     {

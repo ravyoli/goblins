@@ -20,14 +20,15 @@ const MainPage = () => {
     };
 
     const handleCardClick = (index) => {
+        console.log(index)
         const updatedSelection = selectedCards.map((isSelected, i) => 
           i === index ? !isSelected : isSelected
         );
         setSelectedCards(updatedSelection);
+        
       };
 
     const location = useLocation();
-
 
     const { initialSelectedCards } = location.state || { initialSelectedCards: Array(Cards.length).fill(false) };
     
