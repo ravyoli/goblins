@@ -48,6 +48,26 @@ const Actions = [
     },
 
 
+    {
+        card: 'soldier',
+        type: 'sound',
+        clip: 'soldier_wake_up.m4a',
+        text: 'חיילת פיקחי את עינייך. את יכולה להוציא דיסקית אחת מדמות, אם אין דיסקיות בכלל, אז את יכולה לשים את דיסקית המגן'
+    },    
+    {
+        card: 'soldier',
+        type: 'wait',
+        text: 'השהייה'
+    },
+    {
+        card: 'soldier',
+        type: 'sound',
+        clip: 'soldier_close_eyes.m4a',
+        text: 'חיילת עצמי את עינייך.'
+    },
+
+
+
 
     {
         card: 'goblin',

@@ -1,6 +1,7 @@
 export const Cards = [
     { image: 'alien.png', name: 'חייזר', type: 'alien' },
     { image: 'technician.png', name: 'טכנאי' , type: 'tech'},
+    { image: 'soldier.png', name: 'חיילת' , type: 'soldier'},
     { image: 'goblin.png', name: 'גובלין' , type: 'goblin'},
     { image: 'goblin.png', name: 'גובלין' , type: 'goblin'},
     { image: 'student.png', name: 'תלמיד', type: 'teacher_student' },
